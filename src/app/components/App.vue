@@ -122,8 +122,7 @@
 				.then(res => res.json())
 				.then(data => {
 						this.tasks = data;
-						console.log(data);
-					});
+				});
 			},
 			addTask() {
 				fetch('/api/tasks', {
@@ -152,6 +151,7 @@
 				}
 			},
 			getTask(id){
+		
 				fetch('/api/tasks/' + id)
 				.then(res => res.json())
 				.then(data => {					
@@ -159,7 +159,7 @@
 				});				
 			},
 			updateTask(id) {
-				console.log('ingreso a update ' + id);
+		
 				fetch('/api/tasks/' + id, {
 						method: 'PUT',
 						body: JSON.stringify(this.tasksModal),
