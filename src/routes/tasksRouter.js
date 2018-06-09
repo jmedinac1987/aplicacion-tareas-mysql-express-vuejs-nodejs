@@ -39,11 +39,9 @@ router.get('/:id', (req, res) =>{
 
 router.post('/', (req, res) =>
 {
-	const tasksData = {
-		id: null,
+	const tasksData = {		
 		title: req.body.title,
-		content: req.body.content,
-		create_date: null
+		content: req.body.content
 	}
 
 	taskModel.insertTask(tasksData, (err, data) =>{
@@ -73,8 +71,7 @@ router.put('/:id', (req, res) =>{
 	const tasksData = {
 		id: req.params.id,
 		title: req.body.title,
-		content: req.body.content,
-		create_date: null
+		content: req.body.content	
 	}
 
 	taskModel.updateTask(tasksData, (err, data) =>{
