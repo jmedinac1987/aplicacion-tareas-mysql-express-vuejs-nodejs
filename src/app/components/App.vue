@@ -29,7 +29,7 @@
 					</div>				
 				</div>
 				<div class="col-md-7">
-					<div class="table-responsive"">
+					<div class="table-responsive">
 						<table class="table table-bodered">
 							<thead style="text-align: center;">
 								<tr>
@@ -39,7 +39,7 @@
 								</tr>
 							</thead>
 							<tbody style="text-align: center;">
-								<tr v-for="task of tasks">
+								<tr v-for="task of tasks" :key="task.id">
 									<td>{{task.title}}</td>
 									<td>{{task.content}}</td>
 									<td>
