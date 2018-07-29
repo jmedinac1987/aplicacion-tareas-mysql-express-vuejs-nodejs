@@ -19,7 +19,7 @@ taskModel.getTasks = async (callback) =>
 								callback(null, rows);
 							}
 					});	
-	}
+		}
 }
 
 
