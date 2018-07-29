@@ -118,14 +118,14 @@
 		},
 		methods: {
 			getTasks() {
-				fetch('/api/tasks')
+				fetch('/api/postgres')
 				.then(res => res.json())
 				.then(data => {
-						this.tasks = data;
+						this.tasks = data.rows;
 				});
 			},
 			addTask() {
-				fetch('/api/tasks', {
+				fetch('/api/postgres', {
 					method: 'POST',
 					body: JSON.stringify(this.task),
 					headers: {
@@ -140,7 +140,7 @@
 			deleteTask(id) {
 				if (confirm("Desea eliminar la tarea?")) 
 				{
-					fetch('/api/tasks/' + id, {
+					fetch('/api/postgres/' + id, {
 						method: 'DELETE',
 						headers: {
 							'Accept' : 'application/json',
@@ -152,15 +152,15 @@
 			},
 			getTask(id){
 		
-				fetch('/api/tasks/' + id)
+				fetch('/api/postgres/' + id)
 				.then(res => res.json())
 				.then(data => {					
-					this.tasksModal = new Task(data[0].title, data[0].content, data[0].id);				
+					this.tasksModal = new Task(data.rows[0].title, data.rows[0].content, data.rows[0].id);				
 				});				
 			},
 			updateTask(id) {
 		
-				fetch('/api/tasks/' + id, {
+				fetch('/api/postgres/' + id, {
 						method: 'PUT',
 						body: JSON.stringify(this.tasksModal),
 						headers: {

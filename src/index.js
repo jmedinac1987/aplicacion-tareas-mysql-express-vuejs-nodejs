@@ -2,7 +2,7 @@ const express = require('express');//para crear nuestro servidor
 const morgan = require('morgan');
 const app = express();//se ejecuta el servidor 
 const tasksRouter = require('./routes/tasksRouter');
-
+const taskPosgrestRouter = require('./routes/taskPostgresRouter');
 
 //settings
 app.set('port', process.env.PORT || 3000);//creo el puerto, process.env.PORT se usa con el ánimo de que cuando este nuestra aplicación en un servidor real esta pueda tomar el puerto definido por el servidor de lo contrario tomara por defecto el puerto 3000
@@ -15,6 +15,7 @@ app.use(express.json());//cada vez que se reciba información json desde el nave
 
 //Routes
 app.use('/api/tasks' , tasksRouter);
+app.use('/api/postgres' , taskPosgrestRouter);
 
 
 //statics files css, html, img etc; __dirname constante que nos da la ruta del proyecto, esta vieje por defecto en nodejs 
