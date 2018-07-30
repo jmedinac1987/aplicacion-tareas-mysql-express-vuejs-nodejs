@@ -86,27 +86,25 @@ taskModel.updateTask = async (tasksData, callback) =>
 	try {
 
 				
-		if(await postgres.connect())
-		{	
-			let sql = {
-					 	text: 'UPDATE tasks SET title = $1, content = $2 WHERE id = $3',
-						values: [`${tasksData.title}`, `${tasksData.content}`, `${tasksData.id}`]
-				  	  }
+		let sql = {
+				 	text: 'UPDATE tasks SET title = $1, content = $2 WHERE id = $3',
+					values: [`${tasksData.title}`, `${tasksData.content}`, `${tasksData.id}`]
+			  	  }
 
 
-			await postgres.query(sql, (err, result) =>{
-				if (err) 
-				{
-					throw err;
-				}
-				else
-				{
-					callback(null, {
-						'message' : 'success'
-					});
-				}
-			});
-		}
+		await postgres.query(sql, (err, result) =>{
+			if (err) 
+			{
+				throw err;
+			}
+			else
+			{
+				callback(null, {
+					'message' : 'success'
+				});
+			}
+		});
+		
 
 	} catch(e) {
 	
