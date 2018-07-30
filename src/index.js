@@ -1,6 +1,6 @@
 const express = require('express');//para crear nuestro servidor 
 const morgan = require('morgan');
-const app = express();//se ejecuta el servidor 
+const app = express();
 const tasksRouter = require('./routes/tasksRouter');
 const taskPosgrestRouter = require('./routes/taskPostgresRouter');
 
