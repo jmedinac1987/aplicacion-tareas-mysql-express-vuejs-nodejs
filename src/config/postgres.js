@@ -1,7 +1,7 @@
 const { Pool } = require('pg');
 const stringPostgres = 'postgres://postgres:jorge@localhost/mevn';
 const connection = process.env.DATABASE_URL || stringPostgres;
-const sslConfirm = (connection === stringPostgres) ? false : true;
+const sslConfirm = (connection === stringPostgres) ? false : true;//muy importante para heroku
 
 
 const postgres = new Pool({

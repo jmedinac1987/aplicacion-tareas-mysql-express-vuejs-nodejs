@@ -1,4 +1,4 @@
-const postgres = require('../config/postgres.js');//objeto el objeto de conexión
+const postgres = require('../config/postgres.js');//Conexión a la bd postgres
 
 let taskModel = {};
 
