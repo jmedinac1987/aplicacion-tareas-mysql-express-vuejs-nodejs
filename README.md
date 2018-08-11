@@ -34,6 +34,10 @@ La aplicación permite crear una tarea que desees, puedes modificarla, eliminar 
 
 	C. Finalmente ejecutar el comando `npm run start` e ingresar a su navegador web favorito y digitar la siguiente url: http://localhost:3000.
 
+## Demo
+
+Pudes ver el demo de la aplicación en [Heroku.com](https://tareas-postgres-express-vuejs.herokuapp.com/).
+
 ## Licencia
 
 [ISC license](https://opensource.org/licenses/ISC).
